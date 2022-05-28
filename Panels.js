@@ -44,14 +44,14 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
     await Promise.all([check_youtube_premium(),check_netflix()])
       .then((result) => { 
          console.log(result)
- let disney_result=""
+ let disney_result="Disney"
     if (status==STATUS_COMING) {
         //console.log(1)
         disney_result="Disney+: 即将登陆~"+region.toUpperCase()
       } else if (status==STATUS_AVAILABLE){
         //console.log(2)
         console.log(region)
-        disney_result="𝑫𝒊𝒔𝒏𝒆𝒚+: 已解锁 ➺ " +`${getFlagEmoji(region)} | ` + region.toUpperCase()
+        disney_result="Disney+: 已解锁 ➺ " +`${getFlagEmoji(region)} | ` + region.toUpperCase()
         // console.log(result["Disney"])
       } else if (status==STATUS_NOT_AVAILABLE) {
         //console.log(3)
@@ -103,7 +103,7 @@ panel_result['content'] = content
       })
     }
   
-    let youtube_check_result = '𝑌𝑜𝑢𝑇𝑢𝑏𝑒: '
+    let youtube_check_result = 'Youtube: '
   
     await inner_check()
       .then((code) => {
@@ -159,7 +159,7 @@ panel_result['content'] = content
       })
     }
   
-    let netflix_check_result = '𝑵𝒆𝒕𝒇𝒍𝒊𝒙: '
+    let netflix_check_result = 'Netflix: '
   
     await inner_check(81215567)
       .then((code) => {
